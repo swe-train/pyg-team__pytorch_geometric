@@ -171,3 +171,25 @@ exclude_lines = [
     "register_parameter",
     "torch.cuda.is_available",
 ]
+
+[tool.mypy]
+files = [
+    "torch_geometric",
+]
+# install_types = true
+# non_interactive = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+show_error_codes = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+allow_redefinition = true
+disable_error_code = "attr-defined"
+warn_no_return = false
+
+[[tool.mypy.overrides]]
+module = [
+    "torch_geometric.nn",
+]
+ignore_errors = true
