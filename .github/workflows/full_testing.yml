@@ -4,6 +4,9 @@ on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * *"  # Everyday at 6:00am UTC/10:00pm PST
+  push:
+    branches:
+      - aki-ci-mps
 
 jobs:
 

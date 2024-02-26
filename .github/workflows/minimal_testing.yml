@@ -4,6 +4,7 @@ on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - master
+      - aki-ci-mps
   pull_request:
 
 jobs:
