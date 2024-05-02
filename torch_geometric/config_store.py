@@ -166,9 +166,8 @@ def map_annotation(
     origin = getattr(annotation, '__origin__', None)
     args = getattr(annotation, '__args__', [])
     if origin == Union or origin == list or origin == dict:
-        annotation = copy.copy(annotation)
-        annotation.__args__ = tuple(map_annotation(a, mapping) for a in args)
-        return annotation
+        new_args = tuple(map_annotation(a, mapping) for a in args)
+        return origin[new_args]
 
     if mapping is not None and annotation in mapping:
         return mapping[annotation]
